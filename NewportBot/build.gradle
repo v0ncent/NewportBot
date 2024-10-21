@@ -10,6 +10,17 @@ repositories {
 }
 
 dependencies {
+    implementation("net.dv8tion:JDA:5.1.2") { // replace $version with the latest version
+        // Optionally disable audio natives to reduce jar size by excluding `opus-java`
+        // Gradle DSL:
+        // exclude module: 'opus-java'
+        // Kotlin DSL:
+        // exclude(module="opus-java")
+    }
+
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.5'
+    implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
