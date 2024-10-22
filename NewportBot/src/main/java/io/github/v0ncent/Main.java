@@ -30,10 +30,10 @@ public class Main {
         BOT.enableIntents(GatewayIntent.GUILD_MODERATION);
         BOT.enableIntents(GatewayIntent.SCHEDULED_EVENTS);
 
+        BOT.addEventListeners(new Listener());
+
         BOT.setActivity(Activity.playing("Cheefin"));
 
         BOT.build();
-
-        LOGGER.info("Bot online and running!");
     }
 }
