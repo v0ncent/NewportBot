@@ -5,9 +5,14 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import java.util.ArrayList;
 
 public final class CommandManager {
+    private final ArrayList<CommandData> commands;
 
     public CommandManager() {
-        ArrayList<CommandData> commands = new ArrayList<>();
+         commands = new ArrayList<>();
+    }
+
+    public ArrayList<CommandData> getCommands() {
+        return this.commands;
     }
 
 }

@@ -10,11 +10,12 @@ import org.slf4j.LoggerFactory;
 public final class Listener extends ListenerAdapter {
     private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
 
+    private final CommandManager commandManager = new CommandManager();
+
     @Override
     public void onReady(@NotNull ReadyEvent event) {
         // register commands
-
-
+        event.getJDA().updateCommands().addCommands(commandManager.getCommands()).queue();
 
         LOGGER.info(" a,  8a\n" +
                 " `8, `8)                            ,adPPRg,\n" +
